@@ -3,7 +3,7 @@ import React from 'react'
 const me = () => {
     return (
         <h1>
-           Nouvelle page 
+           PageAutheurs
         </h1>
     )
 }
