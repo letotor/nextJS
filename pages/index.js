@@ -6,10 +6,10 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <h1 className="title">
-        Read{" "}
+      {" "}
+      <h1 className=" md:text-2xl  lg:text-4xl">
         <Link href="/posts/first-post">
-          <a>this page!</a>
+          <a>Allez sur blog</a>
         </Link>
       </h1>
     </>
