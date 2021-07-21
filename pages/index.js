@@ -8,9 +8,32 @@ export default function Home() {
     <>
       {" "}
       <h1 className=" md:text-2xl  lg:text-4xl">
-        <Link href="/posts/first-post">
-          <a>Allez sur blog</a>
-        </Link>
+        <ul>
+          <li>
+            <Link href="/">
+              <a>Home Page : Tutorials Next</a>
+            </Link>{" "}
+          </li>
+          <li>
+            {" "}
+            <Link href="/posts/first-post">
+              <a>Les Links coté client</a>
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <Link href="/posts/image-next">
+              <a>Les images optimisée Next</a>
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <Link href="/posts/tailwind">
+              <a>Un exemple de test avec tailwind</a>
+            </Link>
+          </li>
+        </ul>
+
       </h1>
     </>
   );
