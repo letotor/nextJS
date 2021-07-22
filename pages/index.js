@@ -12,7 +12,7 @@ const home = (props) => {
         <title>Tutorial NextJS</title>
         <link rel="icon" href="../public/favicon.ico" />
       </Head>{" "}
-      <Layout className="bg-blue-700 mx-auto text-blue-300">
+      <Layout className="bg-blue-700 mx-auto text-blue-300" breadcrumb={true}>
         <div className="test  md:hidden text-blue-100 lg:block p-2">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
           necessitatibus ut maxime accusantium fuga! Perferendis architecto
