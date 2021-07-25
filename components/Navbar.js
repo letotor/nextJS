@@ -18,10 +18,12 @@ const Navbar = (props) => {
 
   return (
     <>
-     {user && <div>
-        <h2>{user.name}</h2>
-        <p>{JSON.stringify(user)}</p>
-      </div>}
+      {user && (
+        <div>
+          <h2>{user.name}</h2>
+          <p>{JSON.stringify(user)}</p>
+        </div>
+      )}
       {/* <!-- navbar goes here --> */}
       <nav className="">
         <div className="bg-gray-100 font-sans w-full  m-0">
@@ -70,24 +72,27 @@ const Navbar = (props) => {
                 </div>
 
                 <div className="hidden sm:flex sm:items-center">
-                  
-                 { !user   &&<Link href="/api/auth/logout">
-                    <a className="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">
-                      Sign in
-                    </a>
-                  </Link>}
-                  {!user && <Link href="/api/auth/login">
-                    <a className="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">
-                      Login
-                    </a>
-                    
-                  </Link>}
-                  {user && <Link href="/api/auth/logout">
-                    <a className="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">
-                      logout
-                    </a>
-                    
-                  </Link>}
+                  {!user && (
+                    <Link href="/api/auth/logout">
+                      <a className="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">
+                        Sign in
+                      </a>
+                    </Link>
+                  )}
+                  {!user && (
+                    <Link href="/api/auth/login">
+                      <a className="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">
+                        Login
+                      </a>
+                    </Link>
+                  )}
+                  {user && (
+                    <Link href="/api/auth/logout">
+                      <a className="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">
+                        logout
+                      </a>
+                    </Link>
+                  )}
                 </div>
 
                 <div className="sm:hidden cursor-pointer">
@@ -117,30 +122,36 @@ const Navbar = (props) => {
                   </Link>
                   <Link href="#">
                     <a className="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">
-                      Marketplace
+                      Blog
                     </a>
                   </Link>
                   <Link href="#">
                     <a className="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">
-                      Partners
+                      Réalisation
                     </a>
                   </Link>
                   <Link href="#">
                     <a className="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">
-                      Pricing
+                      About
                     </a>
                   </Link>
                   <div className="flex justify-between items-center border-t-2 pt-2">
-                    <Link href="/login">
-                      <a className="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">
-                        Sign in
-                      </a>
-                    </Link>
-                    <Link href="/registration">
-                      <a className="text-gray-800 text-sm font-semibold border px-4 py-1 rounded-lg hover:text-purple-600 hover:border-purple-600">
-                        Sign up
-                      </a>
-                    </Link>
+                    
+                    {!user && (
+                      <Link href="/api/auth/login">
+                        <a className="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">
+                          Login
+                        </a>
+                      </Link>
+                    )}
+                    {user && (
+                      <Link href="/api/auth/logout">
+                        <a className="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">
+                          logout
+                        </a>
+                      </Link>
+                    )}
+                   
                   </div>
                 </div>
               </div>
