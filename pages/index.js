@@ -6,11 +6,33 @@ import Layout from "../components/Layout";
 import Link from "next/link";
 
 // import {gitMemo} from "../content/gitMemo.md"
+import react, { useState, useEffect } from "react";
 
-const home = (props) => {
+
+function useStickyState(defaultValue, key) {
+  const [value, setValue] = useState(defaultValue);
+
+  useEffect(() => {
+    const stickyValue = window.localStorage.getItem(key);
+
+    if (stickyValue !== null) {
+      setValue(JSON.parse(stickyValue));
+    }
+  }, [key]);
+
+  useEffect(() => {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+
+  return [value, setValue];
+}
+
+const Home = (props) => {
+
+   const [mode, setMode] = useStickyState("day", "mode");
+
   return (
     <>
-     
       <Head>
         <title>Tutorial NextJS</title>
         <link rel="icon" href="../public/favicon.ico" />
@@ -41,6 +63,24 @@ const home = (props) => {
 
         <section className="bg-blue-100 text-center h-96">
           <h2 className="font-extrabold text-4xl">Section </h2>
+          <div className="container">
+            <select onChange={(ev) => setMode(ev.target.value)} value={mode}>
+              <option value="day">Day</option>
+              <option value="week">Week</option>
+              <option value="month">Month</option>
+            </select>
+
+            <style jsx>{`
+              .container {
+                min-height: 100vh;
+                padding: 0 0.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              }
+            `}</style>
+          </div>
           <p>
             Facere nesciunt sed eligendi! Explicabo nemo sunt et ut sit iusto
             atque maxime soluta voluptate non! Impedit veritatis vero vel sunt
@@ -68,7 +108,7 @@ const home = (props) => {
   );
 };
 
-export default home;
+export default Home;
 
 
 

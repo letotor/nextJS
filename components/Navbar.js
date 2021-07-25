@@ -3,11 +3,15 @@ import Link from "next/link";
 import React from "react";
 import logo from "../public/images/logo.jpg";
 import { useUser } from "@auth0/nextjs-auth0";
+import react, { useState, useEffect } from "react";
+
 
 
 const Navbar = (props) => {
-  const { user, error, isLoading } = useUser();
 
+
+
+  const { user, error, isLoading } = useUser();
   if (isLoading) return <div>Loading...</div>;
 
   if (error) return <div>{error.message}</div>;
@@ -16,8 +20,7 @@ const Navbar = (props) => {
     <>
      {user && <div>
         <h2>{user.name}</h2>
-        <p>{user.email}</p>
-        <Link href="/api/auth/logout">Logout</Link>
+        <p>{JSON.stringify(user)}</p>
       </div>}
       {/* <!-- navbar goes here --> */}
       <nav className="">
@@ -68,15 +71,22 @@ const Navbar = (props) => {
 
                 <div className="hidden sm:flex sm:items-center">
                   
-                 { !user  &&<Link href="/api/auth/login">
+                 { !user   &&<Link href="/api/auth/logout">
                     <a className="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">
                       Sign in
                     </a>
                   </Link>}
+                  {!user && <Link href="/api/auth/login">
+                    <a className="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">
+                      Login
+                    </a>
+                    
+                  </Link>}
                   {user && <Link href="/api/auth/logout">
                     <a className="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">
-                      Logut out
+                      logout
                     </a>
+                    
                   </Link>}
                 </div>
 
