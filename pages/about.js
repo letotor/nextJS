@@ -13,5 +13,5 @@ export  const about = () => {
     );
 }
 
-// export default about
+export default about
 export const getServerSideProps = withPageAuthRequired();
