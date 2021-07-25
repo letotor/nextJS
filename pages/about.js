@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from "../components/Layout";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
-export default () => {
+export  const about = () => {
     return (
       <Layout>
         <div>
