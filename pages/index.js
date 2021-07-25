@@ -5,36 +5,41 @@ import React from "react";
 import Layout from "../components/Layout";
 import Link from "next/link";
 
+// import {gitMemo} from "../content/gitMemo.md"
+
 const home = (props) => {
   return (
     <>
+     
       <Head>
         <title>Tutorial NextJS</title>
         <link rel="icon" href="../public/favicon.ico" />
       </Head>{" "}
       <Layout className="bg-blue-700 mx-auto text-blue-300" breadcrumb={true}>
-        <div className="test  md:hidden text-blue-100 lg:block p-2">
+        <section className="test  md:hidden text-blue-100 lg:block p-2">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
           necessitatibus ut maxime accusantium fuga! Perferendis architecto
           vitae facilis atque, eaque tempore vel ut ullam molestiae voluptas
           consequuntur iste placeat dolorem illo odio delectus optio. Quisquam
           quibusdam architecto voluptates quam doloribus, corrupti quaerat
           obcaecati deserunt dignissimos facilis omnis nam magnam tenetur!
-        </div>
-        <div className="bg-red-100 text-center h-96">
+        </section>
+
+        <section className="bg-purple-100 text-center h-96">
           <h2 className="font-extrabold text-4xl">
             Acces au different tuto nextjS :
           </h2>
           <span>
             <Link href="/tuto-arbo"> ICI</Link>
+            {/* <gitMemo></gitMemo> */}
           </span>
-        </div>
+        </section>
 
-        <div className="bg-gray-100 text-center h-96">
+        <section className="bg-gray-100 text-center h-96">
           <h2 className="font-extrabold text-4xl">Section </h2>
-        </div>
+        </section>
 
-        <div className="bg-blue-100 text-center h-96">
+        <section className="bg-blue-100 text-center h-96">
           <h2 className="font-extrabold text-4xl">Section </h2>
           <p>
             Facere nesciunt sed eligendi! Explicabo nemo sunt et ut sit iusto
@@ -57,10 +62,37 @@ const home = (props) => {
             magni. Iure reiciendis iusto animi numquam quasi! Eos aut nam
             consequatur.
           </p>
-        </div>
+        </section>
       </Layout>
     </>
   );
 };
 
 export default home;
+
+
+
+// // pages/index.js
+// import { useUser } from '@auth0/nextjs-auth0';
+// import Link from 'next/link';
+
+// export default function Index() {
+//   const { user, error, isLoading } = useUser();
+
+//   if (isLoading) return <div>Loading...</div>;
+//   if (error) return <div>{error.message}</div>;
+
+//   if (user) {
+//     return (
+//       <div>
+//         Welcome {user.name}! <Link href="/api/auth/logout">Logout</Link>
+//       </div>
+//     );
+//   }
+
+//   return (
+  
+//       <Link href="/api/auth/login"><a>Link</a></Link>
+ 
+//   );
+// }
