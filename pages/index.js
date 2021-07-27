@@ -1,6 +1,7 @@
-import styles from "../styles/Home.module.css";
+
 
 import Head from "next/head";
+import styles from "../styles/Home.module.css";
 import React from "react";
 import Layout from "../components/Layout";
 import Link from "next/link";
@@ -35,7 +36,7 @@ const Home = (props) => {
     <>
       <Head>
         <title>Tutorial NextJS</title>
-        <link rel="icon" href="../public/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>{" "}
       <Layout className="bg-blue-700 mx-auto text-blue-300" breadcrumb={true}>
         <section className="test  md:hidden text-blue-100 lg:block p-2">
