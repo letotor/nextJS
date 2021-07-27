@@ -4,8 +4,9 @@ module.exports = (req, res) => {
   const {
     query: { name },
   } = req;
+res.send(name);
 
-  const val=`Hello ${name}!`+"dfdf"
-  res.send(val);
+
+   
 
 }
