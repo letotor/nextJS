@@ -21,13 +21,10 @@ const Navbar = (props) => {
       {user && (
         <Breadcrum isVisible={true}>
           (
-          <div >
+          <div>
             <h2>{user.name}</h2>
             <p className="text-white">
-              <JSONPretty
-                themeClassName="debug"
-                data={user}
-              />
+              <JSONPretty themeClassName="debug" data={user} />
             </p>
           </div>
           )
@@ -83,7 +80,7 @@ const Navbar = (props) => {
 
                 <div className="hidden sm:flex sm:items-center">
                   {!user && (
-                    <Link href="/api/auth/logout">
+                    <Link href="/api/auth/login">
                       <a className="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">
                         Sign in
                       </a>
@@ -130,17 +127,17 @@ const Navbar = (props) => {
                       Services
                     </a>
                   </Link>
-                  <Link href="#">
+                  <Link href="/blog">
                     <a className="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">
                       Blog
                     </a>
                   </Link>
-                  <Link href="#">
+                  <Link href="/portfolio">
                     <a className="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">
                       Réalisation
                     </a>
                   </Link>
-                  <Link href="#">
+                  <Link href="/about">
                     <a className="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">
                       About
                     </a>
