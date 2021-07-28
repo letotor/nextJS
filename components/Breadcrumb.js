@@ -9,7 +9,7 @@ const Breadcrumb = (props) => {
 
 let display 
   if (state.isVisible) {
-    display= "md-block";
+    display= "Mode debug actif :";
   } else {
     display = "hidden";
   }
@@ -17,8 +17,8 @@ let display
   const className = `${props.className} " bg-purple-300 text-white text-center " ${display}`;
   return (
     <div className={className}>
-      <p>Mode debug :</p>
-      <pre> {JSON.stringify(display, null, 4)}</pre>
+      <p>Mode debug actif:</p>
+      {/* <pre> {JSON.stringify(display, null, 4)}</pre> */}
       <div className={className}>{props.children}</div>
     </div>
   );

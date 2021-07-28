@@ -10,7 +10,7 @@ const Layout = ({ children, className, breadcrumb }) => {
     <>
       <div className="breadcrumb">
         <Breadcrumb isVisible={breadcrumb}>
-          Ceci est un message promotionnel
+          Item pour affichage contextuel (mode debug ou autre)
         </Breadcrumb>
       </div>
 
