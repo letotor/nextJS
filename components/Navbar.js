@@ -21,11 +21,13 @@ const Navbar = (props) => {
       {user && (
         <Breadcrum isVisible={true}>
           (
-          <div>
+          <div >
             <h2>{user.name}</h2>
-            <p>
-              {" "}
-              <JSONPretty data={user} />
+            <p className="text-white">
+              <JSONPretty
+                themeClassName="debug"
+                data={user}
+              />
             </p>
           </div>
           )
